@@ -27,6 +27,7 @@ export const hasOwn = (
 ): key is keyof typeof val => hasOwnProperty.call(val, key)
 
 export const isArray = Array.isArray
+// is 关键字，可以用来判断一个变量属于某个接口|类型
 export const isFunction = (val: any): val is Function =>
   typeof val === 'function'
 export const isString = (val: any): val is string => typeof val === 'string'
