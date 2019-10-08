@@ -15,6 +15,7 @@ function compileToFunction(
   return new Function('Vue', code)(runtimeDom) as RenderFunction
 }
 
+// runtime-core components.ts 文件中设置一个全局变量 compare 值为 compileToFunction 函数的引用
 registerRuntimeCompiler(compileToFunction)
 
 export { compileToFunction as compile }

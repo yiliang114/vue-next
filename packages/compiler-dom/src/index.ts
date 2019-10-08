@@ -9,8 +9,10 @@ export function compile(
 ): CodegenResult {
   return baseCompile(template, {
     ...options,
+    // 是否是在浏览器中进行编译的
     ...(__BROWSER__ ? parserOptionsMinimal : parserOptionsStandard),
     nodeTransforms: [transformStyle, ...(options.nodeTransforms || [])],
+    // vue 默认的指令编译， v-if v-for 等
     directiveTransforms: {
       // TODO include DOM-specific directiveTransforms
       ...(options.directiveTransforms || {})
